@@ -20,8 +20,7 @@ optional arguments:
   --degree P      polynomial degree to learn(default: 4)
   --batch-size N  input batch size for training (default: 32)
   --train         training a fully connected layer
-  --evaluate      Evaluate a [pre]trained model from a random tensor in range
-                  [-1,1].
+  --evaluate      Evaluate a [pre]trained model from a random tensor.
 ```
 
 ## FC Architecture
@@ -44,7 +43,7 @@ $ floyd init regression
 
 ### Training
 
-This project will automatically create a dataset from a normal distribution with zero mean and variance one for you, moreover we will use the same generator to evaluate our model. The training stops when the loss will be under the 1e-3 threshold.
+This project will automatically create a dataset from a normal distribution with zero mean and variance one for you(from the generated number will create a sample with polynomial dependency for the given degree), moreover we will use the same generator to evaluate our model. The training stops when the loss will be under the 1e-3 threshold.
 
 Now it's time to run our training on FloydHub. Since the training is driven by a certain threshold, we do not need to specify the number of iterations.
 
@@ -100,7 +99,9 @@ once you are done testing, **remember to shutdown the job!**
 
 Some useful resources on Linear Regression:
 
-- []()
+- [Polynomial regression](https://en.wikipedia.org/wiki/Polynomial_regression)
+- [How linear regression works - Brandon Rohrer](https://youtu.be/fE0bnkNX77A)
+- [Linear Regression With Multiple Variables - Andrew Ng](https://youtu.be/Q4GNLhRtZNc)
 
 ## Contributing
 

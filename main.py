@@ -23,7 +23,7 @@ parser.add_argument('--batch-size', type=int, default=32, metavar='N',
 parser.add_argument('--train', action='store_true',
                     help='training a fully connected layer')
 parser.add_argument('--evaluate', action='store_true',
-                    help='Evaluate a [pre]trained model from a random tensor in range [-1,1].')
+                    help='Evaluate a [pre]trained model from a random tensor.')
 
 args = parser.parse_args()
 
@@ -32,10 +32,6 @@ try:
     os.makedirs(args.outf)
 except OSError:
     pass
-
-if args.evaluate < -1 or args.evaluate > 1:
-    print ("Error: Parameter to evaluate must be in range [-1,1]")
-    exit(-1)
 
 # Is CUDA available?
 cuda = torch.cuda.is_available()
@@ -73,7 +69,7 @@ def poly_desc(W, b):
 def get_batch(batch_size=32):
     """Builds a batch i.e. (x, f(x)) pair."""
     # Build samples from a normal distribution with zero mean
-    # and variance of one: sample are in range [-1,1].
+    # and variance of one.
     random = torch.randn(batch_size)
     x = make_features(random)
     y = f(x)

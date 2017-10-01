@@ -23,7 +23,6 @@ class LinearRegression(object):
 		except IOError as e:
 			# Does not exist OR no read permissions
 			print ("Unable to open ckp file")
-		# self._size = torch.randn(degree, 1).size(0)
 
 	def _make_features(self, x):
 		"""Builds features i.e. a matrix with columns [x, x^2, x^3, x^4]."""
@@ -41,7 +40,7 @@ class LinearRegression(object):
 	def _get_batch(self, batch_size=1):
 		"""Builds a batch i.e. (x, f(x)) pair."""
 		# Build samples from a normal distribution with zero mean
-		# and variance of one: sample are in range [-1,1].
+		# and variance of one.
 		random = torch.randn(batch_size)
 		x = self._make_features(random)
 		return Variable(x)
@@ -65,5 +64,6 @@ class LinearRegression(object):
 		x_test = self._get_batch(batch_size=self._batch_size)
 		if self._cuda:
 			x_test = x_test.cuda()
-		return '==> Learned function result:\t' + self._poly_desc(self._model.weight.data.view(-1),
-				self._model.bias.data) + " ==> " + str(self._model(x_test))
+		learned = self._poly_desc(self._model.weight.data.view(-1),
+				self._model.bias.data)
+		return '==> Learned function result: {l}\n==> Data: {d}\n==> Output: {o}'.format(l=learned, d=x_test.data, o=self._model(x_test).data)
