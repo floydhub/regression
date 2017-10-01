@@ -25,7 +25,7 @@ optional arguments:
   --evaluate      Evaluate a [pre]trained model from a random tensor.
 ```
 
-## FC Architecture
+## Linear Regression Architecture
 
 ![Linear Model](images/Linear_Model.png)
 
