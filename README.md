@@ -1,5 +1,7 @@
 # Linear regression example
 
+![4 Degree Polynomial to learn](images/4degreePol.png)
+
 This project trains a single fully-connected layer to fit a 4th degree polynomial. This is a porting of [pytorch/examples/regression](https://github.com/pytorch/examples/tree/master/regression) making it usables on [FloydHub](https://www.floydhub.com/).
 
 ## Usage
@@ -25,6 +27,7 @@ optional arguments:
 
 ## FC Architecture
 
+![Linear Model](images/Linear_Model.png)
 
 ## Run on FloydHub
 
@@ -75,7 +78,7 @@ and attach it to a dynamic service endpoint:
 
 
 ```bash
-floyd run --gpu --mode serve --env pytorch-0.2  --data <REPLACE_WITH_JOB_OUTPUT_NAME>
+floyd run --gpu --mode serve --env pytorch-0.2  --data <REPLACE_WITH_JOB_OUTPUT_NAME>:input
 ```
 
 The above command will print out a service endpoint for this job in your terminal console.
