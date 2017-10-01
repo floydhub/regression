@@ -88,7 +88,7 @@ The service endpoint will take a couple minutes to become ready. Once it's up, y
 # curl -X POST -F "ckp=<MODEL_CHECKPOINT>" <SERVICE_ENDPOINT>
 
 # e.g. of a POST req
-curl -X POST -o prova.png -F "file=@./parameter/zvector.pth" https://www.floydhub.com/expose/hellllllllllllllo!!!!
+curl -X POST https://www.floydhub.com/expose/hellllllllllllllo!!!!
 ```
 
 Any job running in serving mode will stay up until it reaches maximum runtime. So
