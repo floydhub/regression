@@ -139,6 +139,8 @@ if args.evaluate:
     x_test, y_test = get_batch(batch_size=1)
     if cuda:
         x_test = x_test.cuda()
+    out = np.asscalar(fc(x_test).cpu().numpy())
+    y_test = np.asscalar(y_test.cpu().numpy())
     # Comparison
-    print ('==> Learned function result:\t' + str(fc(x_test)))
-    print('==> Actual function result:\t' + str(y_test))
+    print ('==> Learned function result:\t' + out)
+    print('==> Actual function result:\t' + y_test)

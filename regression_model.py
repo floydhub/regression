@@ -66,4 +66,5 @@ class LinearRegression(object):
 			x_test = x_test.cuda()
 		learned = self._poly_desc(self._model.weight.data.view(-1),
 				self._model.bias.data)
-		return '==> Learned function result: {l}\n==> Data: {d}\n==> Output: {o}'.format(l=learned, d=x_test.data, o=self._model(x_test).data)
+		output = np.asscalar(self._model(x_test).data.cpu().numpy())
+		return '==> Learned function result: {l}\n==> Data: {d}\n==> Output: {o}'.format(l=learned, d=x_test.data, o=output)
