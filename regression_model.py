@@ -67,4 +67,5 @@ class LinearRegression(object):
 		learned = self._poly_desc(self._model.weight.data.view(-1),
 				self._model.bias.data)
 		output = np.asscalar(self._model(x_test).data.cpu().numpy())
-		return '==> Learned function result: {l}\n==> Data: {d}\n==> Output: {o}'.format(l=learned, d=x_test.data, o=output)
+		data = x_test.data.cpu().numpy()
+		return '==> Learned function result: {l}\n==> Data: {d}\n==> Output: {o}\n'.format(l=learned, d=data, o=output)
