@@ -40,7 +40,7 @@ Before you start, log in on FloydHub with the [floyd login](http://docs.floydhub
 the project:
 
 ```bash
-$ git clone https://github.com/ReDeiPirati/regression.git
+$ git clone https://github.com/floydhub/regression.git
 $ cd regression
 $ floyd init regression
 ```
