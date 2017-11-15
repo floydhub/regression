@@ -36,8 +36,7 @@ Here's the commands to training, evaluating and serving your regression model on
 
 ### Project Setup
 
-Before you start, log in on FloydHub with the [floyd login](http://docs.floydhub.com/commands/login/) command, then fork and init
-the project:
+Before you start, log in on FloydHub with the [floyd login](http://docs.floydhub.com/commands/login/) command, then fork and init the project (make sure you have already [created the project on FloydHub](https://docs.floydhub.com/guides/basics/create_new/)):
 
 ```bash
 $ git clone https://github.com/floydhub/regression.git
@@ -57,7 +56,7 @@ $ floyd run --gpu --env pytorch-0.2 "python main.py --train --degree 4 --outf /o
 
 Note:
 - `--gpu` run your job on a FloydHub GPU instance. This is a very simple task, so you can run the a CPU instance without any performance degradation.
-- `-env pytorch-0.2` prepares a pytorch environment for python 3.
+- `--env pytorch-0.2` prepares a pytorch environment for python 3.
 
 You can follow along the progress by using the [logs](http://docs.floydhub.com/commands/logs/) command.
 The training should take less than 1 minute.
